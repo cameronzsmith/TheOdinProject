@@ -9,12 +9,9 @@
         <script>
             let add7 = n => n + 7; // Takes a number n and returns n + 7
             let multiply = (x, y) => x * y; // Takes two numbers and returns their product
+            let capitalize = input => input.charAt(0).toUpperCase() + input.slice(1).toLowerCase(); // Takes a string a returns that string with first letter capitalized
+            let lastLetter = input => input.slice(-1); // Takes a string and returns the last letter of that string
             
-            // Takes a string and returns that string with only the first letter capitalized.
-            function capitalize(input) {
-                return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
-            }
-
             // add7 tests
             console.log(add7(7));
             console.log(add7(5));
@@ -29,6 +26,11 @@
             console.log(capitalize("cameron"));
             console.log(capitalize("HELLO"));
             console.log(capitalize("JavaScript"));
+
+            // lastLetter tests
+            console.log(lastLetter("abcd"));
+            console.log(lastLetter("cameron"));
+            console.log(lastLetter("TheOdinProject"));
         </script>
     </body>
 </html>
