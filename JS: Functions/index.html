@@ -9,6 +9,11 @@
         <script>
             let add7 = n => n + 7; // Takes a number n and returns n + 7
             let multiply = (x, y) => x * y; // Takes two numbers and returns their product
+            
+            // Takes a string and returns that string with only the first letter capitalized.
+            function capitalize(input) {
+                return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+            }
 
             // add7 tests
             console.log(add7(7));
@@ -19,6 +24,11 @@
             console.log(multiply(2, 2));
             console.log(multiply(4, 3));
             console.log(multiply(7, 9));
+
+            // capitalize tests
+            console.log(capitalize("cameron"));
+            console.log(capitalize("HELLO"));
+            console.log(capitalize("JavaScript"));
         </script>
     </body>
 </html>
