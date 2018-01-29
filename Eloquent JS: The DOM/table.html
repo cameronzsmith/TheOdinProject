@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Eloquent JS - The DOM</title>
+
+        <style>
+            /* Defines a cleaner look for tables */
+            table  { border-collapse: collapse; }
+            td, th { border: 1px solid black; padding: 3px 8px; }
+            th     { text-align: left; }
+        </style>
+    </head>
+    <body>
+      
+        <script>
+            // First elements contain the table headings, every 3 elements after that contains a MOUNTAIN entry.
+            const MOUNTAINS = [
+                ['name', 'height', 'country'],
+                ['Kilimanjaro', 5895, 'Tanzania']
+            ];
+
+            // Builds a table taking in a multidimensional array. The first entry in the array contains the table headings. Afterwards, it contains data for the table you wish to create.
+            function buildTable(data) {
+                let tableElement = document.createElement("table");
+                let trElement;
+                let thElements;
+
+                for(let i = 0; i < data.length; i++) { // Cycles through every 
+                    trElement = document.createElement("tr");
+                    for(let j = 0; j < data[i].length; j++) { // Cycles through every element within data[i]
+                        if(i == 0 && i < data[i].length) { // If we're creating our table headings, create <th> elements.
+                            thElements = document.createElement("th");
+                            thElements.innerHTML = MOUNTAINS[i][j].toString();
+                            tableElement.appendChild(thElements);
+                        }
+                        else if(i > 0 && i < data[i].length) { // Otherwise, if we're creating data, create <td> elements.
+                            thElements = document.createElement("td");
+                            thElements.innerHTML = MOUNTAINS[i][j].toString();
+                            tableElement.appendChild(thElements);
+                        }
+                    }
+                    tableElement.appendChild(trElement); // Add the new row for each array entry.
+                }
+
+                return tableElement; // Return the new table
+            }
+
+            document.body.appendChild(buildTable(MOUNTAINS));
+        </script>
+    </body>
+</html>
