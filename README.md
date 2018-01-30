@@ -8,3 +8,4 @@ HTML, CSS, JavaScript, Ruby on Rails, Linux
 Projects have their own repositories and can be found below.
 
 * [Rock, Paper, Scissors](https://github.com/cameronzsmith/RockPaperScissors)
+* [Etch-a-Sketch](https://github.com/cameronzsmith/etchasketch)
